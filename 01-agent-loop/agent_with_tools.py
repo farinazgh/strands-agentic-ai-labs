@@ -15,7 +15,6 @@ NO_PRODUCTS_MESSAGE = (
     "wireless headphones, usb-c hub, mechanical keyboard, noise cancelling"
 )
 
-# Define the agent's role, behaviour and tool usage instructions.
 SYSTEM_PROMPT = (
     "You are a product research analyst. You help the team understand market "
     "positioning by comparing competitor pricing with our internal catalog.\n\n"
@@ -57,17 +56,14 @@ def query_product_database(query: str) -> str:
 
 def main() -> None:
     research_agent = Agent(
-        # Register vended and custom tools.
         tools=[
             web_fetch,  # Retrieve and process web content.
             file_editor,  # Read, create and modify local files.
             query_product_database,  # Query the simulated product database.
         ],
-        # Provide persistent behavioural instructions to the model.
         system_prompt=SYSTEM_PROMPT,
     )
 
-    # Invoke the agent loop with the user prompt.
     research_agent(USER_PROMPT)
 
 
