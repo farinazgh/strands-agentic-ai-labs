@@ -22,7 +22,7 @@ Agent Design Best Practices
 - Monitor execution latency, token usage, and tool calls.
 """
 
-MODEL_ID = "us.anthropic.claude-sonnet-4-6"
+MODEL_ID = "us.amazon.nova-micro-v1:0"
 
 REPORT_PATH = Path(__file__).parent / "competitive_report.md"
 
@@ -93,6 +93,8 @@ def main() -> None:
         ],
         system_prompt=SYSTEM_PROMPT,
         context_manager="auto",
+        region_name="us-east-1",
+        max_tokens=1024,
     )
 
     result = research_agent(USER_PROMPT)

@@ -5,7 +5,7 @@ from strands import Agent
 from strands.models import BedrockModel
 from strands.vended_tools.web_fetch import make_web_fetch
 
-MODEL_ID = "us.anthropic.claude-sonnet-4-6"
+MODEL_ID = "us.amazon.nova-micro-v1:0"
 
 USER_PROMPT = (
     "Research current AI agent deployment patterns in production, "
@@ -27,6 +27,8 @@ def main() -> None:
             ),
         ],
         context_manager="auto",
+        region_name="us-east-1",
+        max_tokens=1024,
     )
 
     result = research_agent(USER_PROMPT)
