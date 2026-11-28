@@ -2,20 +2,14 @@ import os
 
 from strands import Agent
 from strands.models import BedrockModel
-from strands.models.anthropic import AnthropicModel
 from strands.models.ollama import OllamaModel
 from strands.models.openai import OpenAIModel
 
 # bedrock_model = BedrockModel(
-#     model_id="us.anthropic.claude-opus-5"
+#     model_id="us.amazon.nova-micro-v1:0"
 # )
 
-# anthropic_model = AnthropicModel(
-#     client_args={"api_key": os.environ["ANTHROPIC_API_KEY"]},
-#     model_id="claude-sonnet-5",
-#     max_tokens=1024,
-#     params={"temperature": 0.7},
-# )
+
 
 
 # openai_model = OpenAIModel(
